@@ -11,6 +11,9 @@
 # WebStorm
 /.idea
 
+# Compiled CSS
+/src/assets/main.css
+
 # misc
 .DS_Store
 .env.local
