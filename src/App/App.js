@@ -2,9 +2,9 @@ import React from 'react';
 
 function App() {
     return (
-        <>
-            <h1>Ian García Portfolio</h1>
-        </>
+        <div className="bg-blue-900">
+            <h1 className="text-white">Ian García Portfolio</h1>
+        </div>
     );
 }
 
