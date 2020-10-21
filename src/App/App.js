@@ -1,10 +1,9 @@
 import React from 'react';
+import Wrapper from "../Components/wrapper";
 
 function App() {
     return (
-        <div className="bg-blue-900">
-            <h1 className="text-white">Ian García Portfolio</h1>
-        </div>
+        <Wrapper/>
     );
 }
 

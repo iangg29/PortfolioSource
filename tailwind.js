@@ -264,6 +264,9 @@ module.exports = {
       ],
       serif: ['Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
       mono: ['Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace'],
+      montserrat: ['Montserrat', 'sans-serif'],
+      lato: ['Lato', 'sans-serif'],
+      sanspro: ['Source Sans Pro', 'sans-serif']
     },
     fontSize: {
       xs: '0.75rem',
