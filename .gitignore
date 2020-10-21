@@ -11,6 +11,9 @@
 # build
 /build
 
+# Yarn
+yarn.lock
+
 # WebStorm
 /.idea
 
