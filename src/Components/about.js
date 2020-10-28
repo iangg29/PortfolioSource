@@ -6,7 +6,7 @@ class About extends Component {
     render() {
         return (
             <div className="bg-gray-100 flex flex-col py-10" id="aboutme">
-                <div className="text-center font-semibold text-3xl">
+                <div className="text-center font-semibold text-3xl flex justify-center">
                     <h2 className="section-title">Acerca de mí</h2>
                 </div>
                 <div className="flex flex-row mt-10">
