@@ -1,18 +1,23 @@
 import React from 'react';
-import Card from "./card";
-import Image from "./image";
-import Footer from "./footer";
 import Navigation from "./navigation";
+import Image from "./image";
+import Splash from "./splash";
 
 class Wrapper extends React.Component {
+    componentDidMount() {
+        //$(".lds-ellipsis").delay(1500).fadeOut("slow");
+        //$(".main-container").delay(2100).fadeIn("slow");
+    }
+
     render() {
         return (
-            <div className="font-sanspro antialiased text-gray-900 leading-normal tracking-wider gradient">
+            <div className="font-sanspro">
                 <Navigation/>
-                <div className="max-w-4xl flex items-center h-auto  flex-wrap mx-auto mt-10 lg:my-0">
-                    <Card/>
+                <div className="bg">
+                    <Splash/>
+                </div>
+                <div className="antialiased relative">
                     <Image/>
-                    <Footer/>
                 </div>
             </div>
         );

@@ -1,35 +1,55 @@
-import React from 'react';
+import React, {Component} from 'react';
+import $ from 'jquery';
 
-function Navigation() {
-    return(
-        <nav className="w-full text-gray-200 flex items-center justify-between flex-wrap py-8 px-20">
-            <div className="block lg:hidden">
-                <button
-                    className="flex items-center px-3 py-2 border rounded text-teal-200 border-white hover:text-white hover:border-white">
-                    <svg className="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <title>Menu</title>
-                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+class Navigation extends Component {
+
+    componentDidMount() {
+        $(function () {
+            $(document).scroll(function () {
+                var $nav = $(".web-navbar");
+                var $logo = $(".logo");
+                $nav.toggleClass('bg-black', $(this).scrollTop() > $nav.height());
+                $logo.toggleClass('hidden', $(this).scrollTop() < $nav.height());
+            });
+        });
+    }
+
+    render() {
+        return (
+            <header
+                className="fixed bg-transparent text-white z-50 w-full px-5 py-2 flex justify-between items-center web-navbar">
+                <div className="flex-1 flex justify-between items-center ml-20">
+                    <a href="/" className="font-bold hidden logo">Ian García</a>
+                </div>
+
+                <label htmlFor="menu-toggle" className="pointer-cursor lg:hidden block">
+                    <svg className="fill-current text-gray-900" xmlns="http://www.w3.org/2000/svg" width="20"
+                         height="20"
+                         viewBox="0 0 20 20"><title>menu</title>
+                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
                     </svg>
-                </button>
-            </div>
-            <div className="w-full  block flex-grow lg:flex lg:items-center lg:w-auto">
-                <div className="text-sm lg:flex-grow">
-                    <a href="#responsive-header"
-                       className="block mt-4 lg:inline-block opacity-75 lg:mt-0 hover:text-white hover:opacity-100 mr-4">
-                        Experiencia
-                    </a>
-                    <a href="#responsive-header"
-                       className="block mt-4 lg:inline-block lg:mt-0 opacity-75 lg:mt-0 hover:text-white hover:opacity-100 mr-4">
-                        Proyectos
-                    </a>
+                </label>
+                <input className="hidden" type="checkbox" id="menu-toggle"/>
+
+                <div className="hidden lg:flex bg-transparent lg:items-right lg:w-auto w-full text-xl font-semibold"
+                     id="menu">
+                    <nav>
+                        <ul className="lg:flex items-center justify-between text-base pt-4 lg:pt-0">
+                            <li><a
+                                className="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-white"
+                                href="#">Acerca de mí</a></li>
+                            <li><a
+                                className="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-white"
+                                href="#">Proyectos</a></li>
+                            <li><a
+                                className="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-white lg:mb-0 mb-2"
+                                href="#">¡Contáctame!</a></li>
+                        </ul>
+                    </nav>
                 </div>
-                <div>
-                    <a href="#"
-                       className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">¡Contáctame!</a>
-                </div>
-            </div>
-        </nav>
-    );
+            </header>
+        );
+    }
 }
 
 export default Navigation
