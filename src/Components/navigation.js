@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import $ from 'jquery';
+import {NavLink} from "react-router-dom";
 
 class Navigation extends Component {
 
@@ -8,7 +9,7 @@ class Navigation extends Component {
             $(document).scroll(function () {
                 var $nav = $(".web-navbar");
                 var $logo = $(".logo");
-                $nav.toggleClass('bg-black', $(this).scrollTop() > $nav.height());
+                $nav.toggleClass('bg-main', $(this).scrollTop() > $nav.height());
                 $logo.toggleClass('hidden', $(this).scrollTop() < $nav.height());
             });
         });
@@ -18,8 +19,10 @@ class Navigation extends Component {
         return (
             <header
                 className="fixed bg-transparent text-white z-50 w-full px-5 py-2 flex justify-between items-center web-navbar ">
-                <div className="flex-1 flex justify-between items-center ml-20">
-                    <a href="/" className="font-bold hidden logo">Ian García</a>
+                <div className="flex-1 flex justify-between items-center ml-5 md:ml-10 lg:ml-20">
+                    <NavLink className="font-bold hidden logo" exact to="/">
+                        Ian García
+                    </NavLink>
                 </div>
 
                 <label htmlFor="menu-toggle" className="pointer-cursor my-4 lg:hidden block">
@@ -37,13 +40,24 @@ class Navigation extends Component {
                         <ul className="lg:flex items-center justify-between text-base pt-4 lg:pt-0">
                             <li><a
                                 className="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-white"
-                                href="#aboutme">Acerca de mí</a></li>
-                            <li><a
-                                className="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-white"
-                                href="#">Proyectos</a></li>
-                            <li><a
-                                className="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-white lg:mb-0 mb-2"
-                                href="#">¡Contáctame!</a></li>
+                                href="/#aboutme">Acerca de mí</a>
+                            </li>
+                            <li>
+                                <NavLink
+                                    className="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-white"
+                                    exact to="/projects"
+                                    activeStyle={{fontWeight: "bold", borderBottom: '2px solid #FFF'}}>
+                                    Proyectos
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink
+                                    className="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-white"
+                                    exact to="/contact"
+                                    activeStyle={{fontWeight: "bold", borderBottom: '2px solid #FFF'}}>
+                                    ¡Contáctame!
+                                </NavLink>
+                            </li>
                         </ul>
                     </nav>
                 </div>

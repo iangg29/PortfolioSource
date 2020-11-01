@@ -1,15 +1,17 @@
 import React, {Component} from 'react';
 import Tec from '../assets/TecNegro.png';
+import Dotted from '../assets/dot-grid-half.png';
 import Image from "./image";
 
 class About extends Component {
     render() {
         return (
-            <div className="bg-gray-100 flex flex-col py-10" id="aboutme">
-                <div className="text-center font-semibold text-3xl flex justify-center">
+            <div className="flex flex-col py-10 relative" id="aboutme">
+                <img src={Dotted} alt="Dots" className="absolute top-0 left-0 right-0 mx-auto" style={{zIndex:1, minHeight:50}}/>
+                <div className="text-center font-semibold text-3xl flex justify-center z-10">
                     <h2 className="section-title">Acerca de mí</h2>
                 </div>
-                <div className="flex flex-row mt-10">
+                <div className="flex flex-row mt-10 z-20">
                     <div className="w-7/12 py-20 px-32 tracking-widest leading-loose text-justify">
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci atque deleniti ipsum iure
                             laboriosam laborum maiores modi molestias nostrum placeat quam reprehenderit sequi,

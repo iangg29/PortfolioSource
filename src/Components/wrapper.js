@@ -1,9 +1,9 @@
 import React from 'react';
-import Navigation from "./navigation";
 import Splash from "./splash";
 import Footer from "./footer";
 import About from "./about";
-import Top from "./top";
+import Para from "./para";
+import Abilities from "./abilities";
 
 class Wrapper extends React.Component {
     componentDidMount() {
@@ -13,19 +13,17 @@ class Wrapper extends React.Component {
 
     render() {
         return (
-            <div className="relative">
-                <div className="font-sanspro">
-                    <Navigation/>
-                    <div className="bg">
-                        <Splash/>
-                    </div>
-                    <div className="antialiased relative flex flex-col">
-                        <About/>
-                        <Footer/>
-                    </div>
+            <>
+                <div className="bg">
+                    <Splash/>
                 </div>
-                <Top/>
-            </div>
+                <div className="antialiased relative flex flex-col">
+                    <About/>
+                    <Para/>
+                    <Abilities/>
+                    <Footer/>
+                </div>
+            </>
         );
     }
 }
