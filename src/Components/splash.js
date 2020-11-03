@@ -5,7 +5,7 @@ function Splash() {
     return (
         <div className="splash flex flex-col w-full z-50 min-h-screen justify-evenly content-center items-center"
              id="splash-cont">
-            <h1 className="text-white text-6xl font-bold">
+            <h1 className="text-white text-6xl font-bold" data-aos="fade-up" data-aos-duration="2000">
                 ¡Hola! Mi nombre es Ian García <br/>y soy <span
                 className="typer"
                 id="main"
@@ -14,7 +14,7 @@ function Splash() {
                 data-delay="50"
                 data-loop=""/><span className="cursor" data-owner="main"/>
             </h1>
-            <a href="#aboutme"><FaArrowAltCircleDown className="text-white text-5xl opacity-50 hover:opacity-100"/></a>
+            <a href="#aboutme" data-aos="fade-up" data-aos-delay="1000"><FaArrowAltCircleDown className="text-white text-5xl opacity-50 hover:opacity-100"/></a>
         </div>
     );
 }

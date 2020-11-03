@@ -1,27 +1,24 @@
 import React from 'react'
-import Img from "../assets/extra-img.jpg";
+import Tag from "./tag";
 
 
-function Card() {
+function Card(props) {
     return (
-        <div className="rounded-lg overflow-hidden shadow-lg mb-10 bg-gray-100 mx-10">
-            <img className="w-full" src={Img} alt="Sunset in the mountains"/>
-            <div className="px-6 py-4">
-                <div className="font-bold text-xl mb-2">The Coldest Sunset</div>
-                <p className="text-gray-700 text-base">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et
-                    perferendis eaque, exercitationem praesentium nihil.
-                </p>
+        <a href={props.project.url} target="_blank" rel="noopener noreferrer" data-aos="fade-up">
+            <div className="rounded-lg overflow-hidden shadow-lg mb-10 bg-gray-100 mx-10">
+                <img className="w-full" src={props.project.image_url} alt={props.project.name} />
+                <div className="px-6 py-4">
+                    <div className="font-bold text-xl mb-2">{props.project.name}</div>
+                    <h6 className="my-3 text-sm text-gray-700">Autor: <b>{props.project.author}</b></h6>
+                    <p className="text-gray-700 text-base">
+                        {props.project.description}
+                    </p>
+                </div>
+                <div className="px-6 pt-4 pb-2">
+                    {props.project.languages.split(" ").map(language => <Tag key={language} name={language}/>)}
+                </div>
             </div>
-            <div className="px-6 pt-4 pb-2">
-                    <span
-                        className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#Python</span>
-                <span
-                    className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#HTML</span>
-                <span
-                    className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#Javascript</span>
-            </div>
-        </div>
+        </a>
     );
 }
 

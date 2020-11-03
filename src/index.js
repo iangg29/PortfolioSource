@@ -4,6 +4,10 @@ import './assets/main.css';
 import App from "./App/App";
 import * as serviceWorker from './serviceWorker';
 import {BrowserRouter} from "react-router-dom";
+import "aos/dist/aos.css"
+import AOS from 'aos';
+
+AOS.init();
 
 ReactDOM.render(
     <BrowserRouter>

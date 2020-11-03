@@ -23,9 +23,9 @@ class Para extends Component {
                 rgba(0, 0, 0, 0.5)
         ), url(${ParaImage})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center'
                  }}>
-                <h1 className="font-extrabold  text-2xl mx-20">Empieza un proyecto</h1>
-                <p className="font-semibold">¿Estás interesado en trabajar juntos? <br/>Deberíamos conversar un rato.</p>
-                <NavLink className="bg-indigo-800 px-10 py-2 rounded shadow mx-20 hover:shadow-inner hover:bg-indigo-700" exact to="/contact">Hagámoslo</NavLink>
+                <h1 className="font-extrabold  text-2xl mx-20" data-aos="fade-right">Empieza un proyecto</h1>
+                <p className="font-semibold" data-aos="fade-up">¿Estás interesado en trabajar juntos? <br/>Deberíamos conversar un rato.</p>
+                <NavLink className="bg-indigo-800 px-10 py-2 rounded shadow mx-20 hover:shadow-inner hover:bg-indigo-700" exact to="/contact" data-aos="fade-left">Hagámoslo</NavLink>
             </div>
         );
     }

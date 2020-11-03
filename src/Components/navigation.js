@@ -20,7 +20,7 @@ class Navigation extends Component {
             <header
                 className="fixed bg-transparent text-white z-50 w-full px-5 py-2 flex justify-between items-center web-navbar ">
                 <div className="flex-1 flex justify-between items-center ml-5 md:ml-10 lg:ml-20">
-                    <NavLink className="font-bold hidden logo" exact to="/">
+                    <NavLink className="font-bold hidden logo" data-aos="fade-right" exact to="/">
                         Ian García
                     </NavLink>
                 </div>
@@ -38,11 +38,11 @@ class Navigation extends Component {
                      id="menu">
                     <nav>
                         <ul className="lg:flex items-center justify-between text-base pt-4 lg:pt-0">
-                            <li><a
+                            <li data-aos="fade-left"><a
                                 className="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-white"
                                 href="/#aboutme">Acerca de mí</a>
                             </li>
-                            <li>
+                            <li data-aos="fade-left" data-aos-delay="300">
                                 <NavLink
                                     className="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-white"
                                     exact to="/projects"
@@ -50,7 +50,7 @@ class Navigation extends Component {
                                     Proyectos
                                 </NavLink>
                             </li>
-                            <li>
+                            <li data-aos="fade-left" data-aos-delay="600">
                                 <NavLink
                                     className="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-white"
                                     exact to="/contact"

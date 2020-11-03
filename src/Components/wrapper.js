@@ -6,15 +6,11 @@ import Para from "./para";
 import Abilities from "./abilities";
 
 class Wrapper extends React.Component {
-    componentDidMount() {
-        //$(".lds-ellipsis").delay(1500).fadeOut("slow");
-        //$(".main-container").delay(2100).fadeIn("slow");
-    }
 
     render() {
         return (
             <>
-                <div className="bg">
+                <div className="bg relative">
                     <Splash/>
                 </div>
                 <div className="antialiased relative flex flex-col">
